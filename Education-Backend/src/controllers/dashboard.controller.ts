@@ -4,10 +4,13 @@ import { SuggestedTopic } from "../models/SuggestedTopics";
 
 // Mock data for learning progress
 const learningProgressData: LearningProgress[] = [
-  { id: "1", title: "Filing Taxes for Business Owners", lessonsCompleted: 4, totalLessons: 10, progress: 40 },
+  { id: "1", title: "Filing Taxes for Business", lessonsCompleted: 4, totalLessons: 10, progress: 40 },
   { id: "2", title: "Facebook Marketing", lessonsCompleted: 6, totalLessons: 20, progress: 30 },
   { id: "3", title: "Python for Beginners", lessonsCompleted: 15, totalLessons: 30, progress: 50 },
   { id: "4", title: "Cold Outreach", lessonsCompleted: 9, totalLessons: 10, progress: 90 },
+  { id: "5", title: "Cold Outreach", lessonsCompleted: 9, totalLessons: 10, progress: 90 },
+  { id: "6", title: "Python for Beginners", lessonsCompleted: 15, totalLessons: 30, progress: 50 },
+  { id: "7", title: "Cold Outreach", lessonsCompleted: 9, totalLessons: 10, progress: 90 },
 ];
 
 // Mock data for suggested topics
@@ -31,5 +34,6 @@ export const getUserDetails = (req: Request, res: Response) => {
   res.status(200).json({
     name: "Carson",
     status: "active",
+    profile:'https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001882.png'
   });
 };
