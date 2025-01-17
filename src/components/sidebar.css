@@ -1,14 +1,17 @@
-/* Sidebar styles */
-.sidebar {
-    width: 250px; /* Expanded width */
-    transition: width 0.3s, transform 0.3s;
-  
-    color: white;
+  .sidebar {
+    width: 16%;
     height: 90vh;
+    margin: 15px;
+    transition: width 0.3s, transform 0.3s;
+    color: white;
     overflow: hidden;
+    border-radius: 15px;
+    background-color: #2a2c2d;
+    padding: 20px;
     display: flex;
     flex-direction: column;
   }
+  
   
   .sidebar.collapsed {
     width: 20px; /* Collapsed width */
@@ -23,6 +26,8 @@
   
   .sidebar h3 img {
     transition: transform 0.3s;
+    height: 30px;
+    width: 30px;
   }
   
   .sidebar ul {
@@ -58,15 +63,6 @@
   }
   
 
-  .sidebar {
-    width: 14%;
-    margin: 20px;
-    border-radius: 15px;
-    background-color: #2a2c2d;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-  }
   
   .sidebar ul {
     list-style: none;

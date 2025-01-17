@@ -26,7 +26,8 @@ const Dashboard: React.FC = () => {
   const [suggestedTopicsData, setSuggestedTopicsData] = useState<SuggestedTopic[]>([]);
 
   // State to manage the current index of learning progress
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [learningIndex, setlearningIndex] = useState<number>(0);
+  const [SuggestedIndex, setSuggestedIndex] = useState<number>(0);
 
   // Fetch learning progress data from the backend API
   useEffect(() => {
@@ -54,24 +55,36 @@ const Dashboard: React.FC = () => {
   }, []);
 
   // Handle sliding to the next item
-  const handleNext = () => {
-    if (currentIndex < learningProgressData.length - 1) {
-      setCurrentIndex(prevIndex => prevIndex + 1);
+  const handleLearningNext = () => {
+    if (learningIndex < learningProgressData.length - 1) {
+      setlearningIndex(prevIndex => prevIndex + 1);
+    } else {
+      // Optionally fetch more data if required
+    }
+  };
+  const handleSuggestedNext = () => {
+    if (SuggestedIndex < suggestedTopicsData.length - 1) {
+      setSuggestedIndex(prevIndex => prevIndex + 1);
     } else {
       // Optionally fetch more data if required
     }
   };
 
   // Handle sliding to the previous item
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(prevIndex => prevIndex - 1);
+  const handleLearningPrev = () => {
+    if (learningIndex > 0) {
+      setlearningIndex(prevIndex => prevIndex - 1);
+    }
+  };
+  const handleSuggestedPrev = () => {
+    if (SuggestedIndex > 0) {
+      setSuggestedIndex(prevIndex => prevIndex - 1);
     }
   };
 
   // Get the current learning progress items to display
-  const currentLearningProgressItems = learningProgressData.slice(currentIndex, currentIndex + 4);
-
+  const currentLearningProgressItems = learningProgressData.slice(learningIndex, learningIndex + 4);
+  const currentSuggestedProgressItems = suggestedTopicsData.slice(SuggestedIndex, SuggestedIndex + 4);
   return (
     <div className="dashboard-container">
       <main className="main-content">
@@ -96,8 +109,8 @@ const Dashboard: React.FC = () => {
             <div className="cards-wrapper">
               <button
                 className="arrow-left"
-                onClick={handlePrev}
-                disabled={currentIndex === 0}
+                onClick={handleLearningPrev}
+                disabled={learningIndex === 0}
               >
                 {"<"}
               </button>
@@ -117,23 +130,41 @@ const Dashboard: React.FC = () => {
 
               <button
                 className="arrow-right"
-                onClick={handleNext}
-                disabled={currentIndex >= learningProgressData.length - 1}
+                onClick={handleLearningNext}
+                disabled={learningIndex >= learningProgressData.length - 1}
               >
                 {">"}
               </button>
             </div>
           </div>
+          <div className="learning-section">
+            <h2>Suggested Topics <span> See All <KeyboardArrowRightIcon/></span></h2>
+            
+            <div className="cards-wrapper">
+              <button
+                className="arrow-left"
+                onClick={handleSuggestedPrev}
+                disabled={SuggestedIndex === 0}
+              >
+                {"<"}
+              </button>
 
-          <div className="suggested-section">
-            <h2>Suggested Topics</h2>
-            <div className="cards">
-              {suggestedTopicsData.map((topic) => (
-                <div key={topic.id} className="card">
-                  <h4>{topic.title}</h4>
-                  <p style={{ fontSize: '13px' }}>{topic.description}</p>
-                </div>
-              ))}
+              <div className="cards">
+                {currentSuggestedProgressItems.map((topic) => (
+                  <div key={topic.id} className="card">
+                    <h4>{topic.title}</h4>
+                    <p style={{ fontSize: '13px' }}>{topic.description}</p>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                className="arrow-right"
+                onClick={handleSuggestedNext}
+                disabled={SuggestedIndex >= learningProgressData.length - 1}
+              >
+                {">"}
+              </button>
             </div>
           </div>
         </section>

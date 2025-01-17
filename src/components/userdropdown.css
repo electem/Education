@@ -3,7 +3,7 @@
     display: inline-block;
     color: #fff;
     font-family: Arial, sans-serif;
-    margin-top: 120%;
+    margin-top: 100%;
   }
   
   .user-info {
@@ -30,7 +30,7 @@
   
   .arrow {
     font-size: 12px;
-    margin-left: 3rem;
+    margin-left: 5rem;
   }
   
   .dropdown-menu {
@@ -39,7 +39,7 @@
     right: 0;
     background-color: #272629f0;
     overflow: hidden;
-    width: 212px;
+    width: 99%;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: max-height 0.2s ease, opacity 0.3s ease;
     max-height: 0;

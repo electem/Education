@@ -8,13 +8,11 @@ body {
   
   .dashboard-container {
     display: flex;
-    height: 90vh;
+    height: 100vh;
   }
   
   .main-content {
     flex-grow: 1;
-    padding: 20px;
-    
   }
   header div {
     text-align: center;
@@ -23,7 +21,7 @@ body {
   
   header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column; /* Arrange items vertically */
     align-items: center;    /* Center items horizontally */
@@ -65,7 +63,7 @@ body {
   }
   
   .content-section {
-    margin-top: 20px;
+    margin-top: 10px;
   }
   
   .cards-wrapper {
@@ -131,7 +129,8 @@ body {
 
 
 .learning-section h2{
- margin-left: 4%;
+ margin-left: 5%;
+ font-size: 18px;
  display: flex;
  justify-content: space-between;
 }
@@ -154,7 +153,7 @@ body {
   position: relative;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 
