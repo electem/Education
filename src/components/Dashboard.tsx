@@ -4,6 +4,7 @@ import { fetchlearningOptions, fetchsuggestedOptions } from "../services/api";
 import dashicon from '../assets/dashicon.png';
 import NearMeIcon from '@mui/icons-material/NearMe';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { useNavigate } from "react-router-dom";
 
 // Define types for data
 interface LearningProgress {
@@ -22,6 +23,7 @@ interface SuggestedTopic {
 
 const Dashboard: React.FC = () => {
   // State to store fetched data
+  const navigate = useNavigate();
   const [learningProgressData, setLearningProgressData] = useState<LearningProgress[]>([]);
   const [suggestedTopicsData, setSuggestedTopicsData] = useState<SuggestedTopic[]>([]);
 
@@ -82,6 +84,11 @@ const Dashboard: React.FC = () => {
     }
   };
 
+
+  const handleSeeAllClick = () => {
+    navigate("/learning-items"); 
+  };
+
   // Get the current learning progress items to display
   const currentLearningProgressItems = learningProgressData.slice(learningIndex, learningIndex + 4);
   const currentSuggestedProgressItems = suggestedTopicsData.slice(SuggestedIndex, SuggestedIndex + 4);
@@ -104,8 +111,11 @@ const Dashboard: React.FC = () => {
         </header>
         <section className="content-section">
           <div className="learning-section">
-            <h2>Continue Learning <span> See All <KeyboardArrowRightIcon/></span></h2>
-            
+            <h2>Continue Learning 
+            <span onClick={handleSeeAllClick} className="see-all-button">
+              See All <KeyboardArrowRightIcon />
+             </span>
+            </h2>
             <div className="cards-wrapper">
               <button
                 className="arrow-left"

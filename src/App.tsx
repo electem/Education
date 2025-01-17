@@ -1,16 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/Dashboard";
+import LearningItems from "./components/LearningItems"; // Import your new component
+import LoginPage from "./components/Login";
 
 const App: React.FC = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   return (
-    <div style={styles.app}>
-      <Sidebar />
-      <div style={styles.content}>
-        
-        <Dashboard/>
+    <Router>
+      <div style={styles.app}>
+        {isAuthenticated && <Sidebar />} {/* Show sidebar only if logged in */}
+        <div style={styles.content}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                isAuthenticated ? <Navigate to="/dashboard" replace /> : <LoginPage onLogin={() => setIsAuthenticated(true)} />
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={isAuthenticated ? <Dashboard /> : <Navigate to="/" replace />}
+            />
+            <Route
+              path="/learning-items"
+              element={isAuthenticated ? <LearningItems /> : <Navigate to="/" replace />}
+            />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 };
 
@@ -26,3 +47,4 @@ const styles = {
 };
 
 export default App;
+

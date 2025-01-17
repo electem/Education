@@ -1,0 +1,150 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+  
+  /* Login Container */
+  .login-container {
+    display: flex;
+    height: 100vh;
+    background-color: rgba(35,40,41,255);
+  }
+  
+  /* Left Section - Image and Quote */
+  .login-image {
+    flex: 1;
+    height: 100vh;
+    border-radius: 20px;
+    background: url('https://burst.shopifycdn.com/photos/icy-summit-of-a-mountain-on-a-frosty-night.jpg?width=1000&format=pjpg&exif=0&iptc=0') center/cover no-repeat;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+  
+  .login-image h1 {
+    font-size: 1.5rem;
+  }
+  
+  .login-image p {
+    text-align: center;
+    margin-top: 70%;
+    font-size: 2rem;
+  }
+  
+  /* Right Section - Form */
+  .login-form {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(35,40,41,255);
+  }
+  
+  .login-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2px;
+  }
+  .login-form p {
+    margin-bottom: 15px;
+  }
+  
+  .login-form form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .login-form a {
+   color: rgba(88,135,81,255) ;
+  }
+  
+  .login-form input {
+    padding: 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px 0px #0a0a0a67;
+    background-color:  #17171767;
+    color: #fff;
+  }
+  
+  .login-form button {
+    padding: 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(88,135,81,255);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-form button:hover {
+    background-color: rgba(88,135,81,255);
+  }
+  
+  .password-container {
+    position: relative;
+  }
+  .password-container input{
+    width: 94%;
+  }
+  
+  .password-container .show-password-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+
+ .line span {
+    display: flex;
+    flex-direction: row;
+    color: #858585;
+}
+
+.line span:before,
+.line span:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 2px solid #858585;
+    margin: auto;
+}
+
+.bottom-btn{
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.bottom-btn button{
+   background-color: transparent;
+   border: 1px solid #858585;
+   border-radius: 20px;
+   color: #858585;
+  
+}
+
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .login-container {
+      flex-direction: column;
+    }
+  
+    .login-image,
+    .login-form {
+      flex: none;
+      width: 100%;
+    }
+  }
+  

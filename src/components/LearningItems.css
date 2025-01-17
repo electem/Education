@@ -1,0 +1,124 @@
+
+  .dashboard-containerSeeAll {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .main-contentSeeAll {
+    flex-grow: 1;
+  }
+  
+  
+  .content-sectionSeeAll {
+    margin-top: 10px;
+  }
+  
+  .cards-wrapperSeeAll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+  
+  .cardsSeeAll {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+  .cardSeeAll p span{
+    font-size: 13px;
+    margin-left: 11%;
+  }
+  
+  .cardSeeAll {
+    padding: 15px;
+    border-radius: 20px;
+    margin: 0;
+    box-shadow: 5px 5px 20px 0px #0a0a0a67;
+    background-color: rgba(35,40,41,255);
+  }
+  .cardSeeAll h4 {
+    font-size: 13px;
+  }
+  h4{
+    margin: 0;
+  }
+  p{
+    margin: 0.5;
+  }
+  progress {
+    width: 100%;
+  }
+
+  /* General styles for progress */
+.progress-barSeeAll {
+  width: 100%;
+  height: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+  appearance: none; /* Remove default styling */
+}
+
+/* Change the background of the entire progress bar */
+.progress-barSeeAll::-webkit-progress-bar {
+  background-color: #191919; /* Light grey background */
+  border-radius: 10px;
+}
+
+/* Change the color of the filled portion */
+.progress-barSeeAll::-webkit-progress-value {
+  background-color: #4caf50; /* Green color for progress */
+  border-radius: 10px; /* Rounded edges for smooth appearance */
+}
+
+.progress-barSeeAll::-moz-progress-bar {
+  background-color: #4caf50; /* Green color for Firefox */
+}
+
+
+.learning-sectionSeeAll {
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+
+.learning-sectionSeeAll h2{
+
+ font-size: 18px;
+ display: flex;
+ align-items: center;
+}
+
+.learning-sectionSeeAll h2 span{
+  
+  font-size: 13px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background-color: rgba(35,40,41,255);
+  box-shadow: 5px 5px 20px 0px #0a0a0a67;
+ }
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .arrow-left,
+  .arrow-right {
+    font-size: 18px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .arrow-left,
+  .arrow-right {
+    font-size: 16px;
+    padding: 6px;
+  }
+}
